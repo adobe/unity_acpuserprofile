@@ -134,7 +134,7 @@ To build demo app for specific platform follow the below instructions.
 1. Select `Android` from the __Platform__ window
 1. If `Android` is not the active platform, hit the button that says __Switch Platform__ (it will only be available if you actually need to switch active platforms)
 1. Press the __Build And Run__ button
-2. You will be asked to provide a location to save the build. Make a new directory at *unity-acpuserprofile/ACPUserProfile/Builds* (this folder is in the .gitignore file)
+2. You will be asked to provide a location to save the build. Make a new directory at *unity_acpuserprofile/ACPUserProfile/Builds* (this folder is in the .gitignore file)
 3. Name build whatever you want and press __Save__
 4. `Unity` will build an `apk` file and automatically deploy it to the connected device
 
@@ -143,7 +143,7 @@ To build demo app for specific platform follow the below instructions.
 1. Select `iOS` from the __Platform__ window
 1. If `iOS` is not the active platform, hit the button that says __Switch Platform__ (it will only be available if you actually need to switch active platforms)
 1. Press the __Build And Run__ button
-1. You will be asked to provide a location to save the build. Make a new directory at *unity-acpuserprofile/ACPUserProfile/Builds* (this folder is in the .gitignore file)
+1. You will be asked to provide a location to save the build. Make a new directory at *unity_acpuserprofile/ACPUserProfile/Builds* (this folder is in the .gitignore file)
 1. Name build whatever you want and press __Save__
 1. `Unity` will create and open an `Xcode` project
 1. From the Xcode project run the app on a simulator.
