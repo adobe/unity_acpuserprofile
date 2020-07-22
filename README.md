@@ -31,7 +31,7 @@ Plugins for a Unity project use the following folder structure:
 - Import `ACPUserProfile.unitypackage` via Assets->Import Package
 ## Usage
 
-### [UserProfile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/adobe-profile)
+### [UserProfile](https://aep-sdks.gitbook.io/docs/using-mobile-extensions/profile)
 
 #### Initialization
 ##### Initialize by registering the extensions and calling the start function for core
