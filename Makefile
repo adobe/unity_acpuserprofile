@@ -9,6 +9,9 @@ BIN_DIR=$(ROOT_DIR)/bin
 BUILD_DIR=$(BIN_DIR)/build_temp
 BUILD_PKG=ACPUserProfile.unitypackage
 ASSETS=Assets/Plugins
+IOS_DIR=$(ASSETS)/iOS
+ANDROID_DIR=$(ASSETS)/Android
+ALL_FILES=$(shell find ACPUserProfile/Assets/Plugins -type f -name "*ACPUserProfile*" ! -name "*.meta" -o -name "*userprofile*" ! -name "*.meta" | sed 's/.*ACPUserProfile*\///')
 
 # targets
 release: clean setup unity_build
@@ -28,7 +31,7 @@ unity_build:
 	$(UNITY_BIN) -batchmode -quit \
 	-logFile $(BUILD_DIR)/buildLog.log \
 	-projectPath $(PROJECT_DIR) \
-	-exportPackage $(ASSETS) ../$(BUILD_DIR)/$(MOBILE_DIR)/$(BUILD_PKG)
+	-exportPackage $(ALL_FILES) ../$(BUILD_DIR)/$(MOBILE_DIR)/$(BUILD_PKG)
 
 	@echo ""
 	@echo "######################################################################"
@@ -41,4 +44,4 @@ clean:
 	rm -rf $(BUILD_DIR)
 
 setup:
-	mkdir $(BUILD_DIR)
+	mkdir -p $(BUILD_DIR)
