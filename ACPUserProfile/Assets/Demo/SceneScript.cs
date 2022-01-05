@@ -85,6 +85,7 @@ public class SceneScript : MonoBehaviour
         var attributeKeys = new List<string>(); 
         attributeKeys.Add("attrNameTest");
         attributeKeys.Add("mapKey");
+        attributeKeys.Add("mapKey1");
         ACPUserProfile.GetUserAttributes(attributeKeys, HandleAdobeGetUserAttributesCallback);
     }
 

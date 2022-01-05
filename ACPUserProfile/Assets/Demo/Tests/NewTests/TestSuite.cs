@@ -30,7 +30,7 @@ namespace Tests
             if (Application.platform == RuntimePlatform.Android) {
                 return AssertEqualResult("ExtensionVersion", "UserProfile extension version : 1.1.0"); 
             } else if (Application.platform == RuntimePlatform.IPhonePlayer) {
-                return AssertEqualResult("ExtensionVersion", "UserProfile extension version : 2.1.0"); 
+                return AssertEqualResult("ExtensionVersion", "UserProfile extension version : 2.2.0"); 
             } else {
                 return null;
             }
@@ -55,11 +55,17 @@ namespace Tests
             yield return new WaitForSeconds(1f);
             InvokeButtonClick("UpdateUserAttribute");
             yield return new WaitForSeconds(1f);
+            InvokeButtonClick("UpdateUserAttributes");
+            yield return new WaitForSeconds(1f);
             InvokeButtonClick("RemoveUserAttribute");
             yield return new WaitForSeconds(1f);
             InvokeButtonClick("GetUserAttributes");
             yield return new WaitForSeconds(1f);
-            Assert.AreEqual("Attributes are : ", GetActualResult());
+            if (Application.platform == RuntimePlatform.Android) {
+                Assert.AreEqual("Attributes are : {\"mapKey1\": \"mapValue1\",\"mapKey\": \"mapValue\"}", GetActualResult());
+            } else if (Application.platform == RuntimePlatform.IPhonePlayer) {
+                Assert.AreEqual("Attributes are : {\"mapKey1\":\"mapValue1\",\"mapKey\":\"mapValue\"}", GetActualResult());
+            }
         }
 
         [UnityTest]
@@ -68,11 +74,17 @@ namespace Tests
             yield return LoadScene();
             InvokeButtonClick("UpdateUserAttributes");
             yield return new WaitForSeconds(1f);
+            InvokeButtonClick("UpdateUserAttribute");
+            yield return new WaitForSeconds(1f);
             InvokeButtonClick("RemoveUserAttributes");
             yield return new WaitForSeconds(1f);
             InvokeButtonClick("GetUserAttributes");
             yield return new WaitForSeconds(1f);
-            Assert.AreEqual("Attributes are : ", GetActualResult());
+            if (Application.platform == RuntimePlatform.Android) {
+                Assert.AreEqual("Attributes are : {\"mapKey1\": \"mapValue1\"}", GetActualResult());
+            } else if (Application.platform == RuntimePlatform.IPhonePlayer) {
+                Assert.AreEqual("Attributes are : {\"mapKey1\":\"mapValue1\"}", GetActualResult());
+            }
         }
 
         [UnityTest]
@@ -83,7 +95,11 @@ namespace Tests
             yield return new WaitForSeconds(1f);
             InvokeButtonClick("GetUserAttributes");
             yield return new WaitForSeconds(1f);
-            Assert.AreEqual("Attributes are : {\"mapKey\": \"mapValue\"}", GetActualResult());
+            if (Application.platform == RuntimePlatform.Android) {
+                Assert.AreEqual("Attributes are : {\"mapKey1\": \"mapValue1\",\"mapKey\": \"mapValue\"}", GetActualResult());
+            } else if (Application.platform == RuntimePlatform.IPhonePlayer) {
+                Assert.AreEqual("Attributes are : {\"mapKey1\":\"mapValue1\",\"mapKey\":\"mapValue\"}", GetActualResult());
+            }
         }
 
         // Helper functions
