@@ -25,7 +25,7 @@ Plugins for a Unity project use the following folder structure:
 
 #### Installing the ACPCore Unity Package
 - Download [ACPCore-1.0.1-Unity.zip](https://github.com/adobe/unity-acpcore/tree/master/bin/ACPCore-1.0.0-Unity.zip) 
-- Unzip `ACPCore-1.0.0-Unity.zip`
+- Unzip `ACPCore-1.0.1-Unity.zip`
 - Import `ACPCore.unitypackage` via Assets->Import Package
 
 #### Installing the ACPUserProfile Unity Package
